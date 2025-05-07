@@ -16,6 +16,6 @@ export default {
 
 		const workerBMessage = await workerBResponse.text();
 
-		return new Response(`This is from worker-a: ${workerAMessage}\nThis is from worker-b: ${workerBMessage}`);
+		return new Response(`${workerAMessage}\n` + `${workerBMessage}\n`);
 	},
 } satisfies ExportedHandler<Env>;
