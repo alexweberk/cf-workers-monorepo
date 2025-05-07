@@ -29,9 +29,6 @@ pnpm --filter worker-a dev          # http://localhost:8787
 # run every Worker in parallel
 pnpm run dev:all
 
-# deploy all Workers
-pnpm run deploy:all
-
 # generate types for all Workers
 pnpm run cf-typegen:all
 ```
@@ -45,3 +42,12 @@ pnpm create cloudflare@latest ./apps/<<worker-name>>
 ```
 
 Then change the port it runs on in the `dev` script in the `package.json` file.
+
+### Deploying a new Worker
+
+Deploying should be done one by one.
+
+```bash
+cd apps/<<worker-name>>
+pnpm run deploy
+```
